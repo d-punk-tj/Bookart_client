@@ -31,9 +31,15 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
+              "../node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/hammerjs/hammer.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -127,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "bookartclient"
+  "defaultProject": "bookartclient",
+  "cli": {
+    "analytics": "5da431fa-9699-4b72-a97f-98ea8554efb4"
+  }
 }

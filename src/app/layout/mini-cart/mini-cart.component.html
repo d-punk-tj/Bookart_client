@@ -1,0 +1,31 @@
+<div class="table-responsive">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let product of cart">
+          <th scope="row" class="border-0">
+            <div class="p-2">
+              <div class="container">
+                <img src= "{{product.image}}" alt="" width="40" class="img-fluid rounded shadow-sm">
+
+                <p class="mb-0"> 
+                    <a href="#" class="text-dark d-inline-block align-middle">{{product.title | slice:0:30}}</a>
+                </p>
+                <span class="text-muted font-weight-normal font-italic d-block ml-2">
+                        <span class="badge purple mr-1">{{product.authors}}</span>
+                        <!-- <span class="badge blue mr-1">{{product.title}}</span> -->
+                </span>
+              </div>
+            </div>
+          </th>
+          <td class="border-0 align-middle">
+                <var class="price">${{(product.price * product.Quantity)}}</var> 
+                <small class="text-muted">(${{product.price}} each)</small> 
+          </td>
+          <td class="border-0 align-middle"><strong>{{product.Quantity}}</strong></td>
+          <td class="border-0 align-middle"><a (click)="onRemoveProductsFromCart(product.bookID)" class="text-dark"><i class="fa fa-trash"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <li class="divider"></li>
+  <li><a class="text-center btn" [routerLink]="[ '/cart/shopping-cart' ]"><strong>View Cart</strong></a></li>

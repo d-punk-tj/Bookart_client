@@ -1,0 +1,47 @@
+<div class="product-grid grid">
+    <div class="product-image">
+      <a [routerLink]="['product-details', product.bookID]">
+        <img class="pic-1" src= "{{product.image}}">
+      </a>
+      <ul class="social">
+        <li><a [routerLink]="['product-details', product.bookID]" data-tip="Quick View"><i class="fa fa-eye"></i></a>
+        </li>
+      </ul>
+      <!-- <span class="product-new-label">New</span>
+              <span class="product-discount-label">-10%</span> -->
+    </div>
+    <div class="product-content">
+      <span class="product-shipping" style="font-size: 1rem; color: grey;">{{product.authors}}</span>
+      <h3 class="title">
+        <a [routerLink]="['product-details', product.bookID]">
+            {{product.title}}
+          
+        </a>
+      </h3>
+      <div class="price">
+        ${{product.price}}
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6 py-1 px-1">
+          <strong>
+            Reviews
+          </strong>
+        
+          {{product.ratings_count}}
+  
+        </div>
+        <div class="col-md-6 py-1 px-1">
+            <img src="../../../../../assets/star.png" alt="" srcset="" width="20px">
+
+          <strong>
+            Rating
+          </strong>
+          {{product.average_rating}}
+        </div>
+      </div>
+      <!-- <button class="add-to-cart" (click)="onAddProductToCart()">ADD TO CART</button> -->
+      <app-add-to-cart [productId]="product.bookID" xxxxxx [isHomePage]="true">
+      </app-add-to-cart>
+    </div>
+  </div>

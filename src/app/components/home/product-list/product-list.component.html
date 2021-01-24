@@ -1,0 +1,34 @@
+<!--Section: Products v.1-->
+<section class="text-center pb-3 mb-5 mt-1">
+    <!--Section description-->
+    <p class="grey-text pb-1 font-weight-normal font-italic">
+       THE GREAT BOOK STORE
+    </p>
+    
+          
+    <!--Grid row-->
+    <div class="row">
+        <!--Grid column-->
+        <app-product-card *ngFor="let product of productList" [productData]="product" class="col-md-4 col-sm-6 mb-3 row-eq-height"></app-product-card>
+        <div class="noProduct" *ngIf="productList.length == 0">
+        <p >
+            Opps...your book does not exists...
+        </p>
+        <a href="/" >Go back</a>
+    </div>
+          <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </section>
+  <nav aria-label="Page navigation example" >
+      <app-pagination
+        (goPage)="goToPage($event)"
+        (goNext)="onNext()"
+        (goPrev)="onPrev()"
+        [pagesToShow]="5"
+        [page]="CURRENT_PAGE"
+        [perPage]="PER_PAGE"
+        [count]="PRODUCT_COUNT">
+      </app-pagination>
+    </nav>
+  <!--Section: Products v.1-->

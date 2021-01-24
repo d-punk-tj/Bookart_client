@@ -1,0 +1,15 @@
+.breadcrumb-item + .breadcrumb-item::before{
+    content: ">>";
+}
+
+img {
+    max-width: 100px !important;
+}
+
+.noProduct{
+    text-align: center;
+}
+
+.list-group-item{
+    cursor: pointer;
+}
